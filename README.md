@@ -3,4 +3,4 @@
 https://1947324563.github.io/CV/love.html
 #
 个人简历
-https://1947324563.github.io/CV/HuoJianqiangResume.html
+https://1947324563.github.io/CV/WXchat.html
