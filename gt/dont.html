@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>你不知道的事</title>
+		<link href="https://cdn.bootcss.com/twitter-bootstrap/3.0.0-rc2/css/bootstrap.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/twitter-bootstrap/3.0.0-rc2/js/bootstrap.js"></script>
+	<style type="text/css">
+		.imghei{
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="col-md-4">
+		<img class="imghei" src="http://www.jitaba.cn/upimg/allimg/1701/1-1F102040918.png">
+	</div>
+	<div class="col-md-4"><img class="imghei" src="http://www.jitaba.cn/upimg/allimg/1701/1-1F102040919.png"></div>
+	<div class="col-md-4"><img class="imghei" src="http://www.jitaba.cn/upimg/allimg/1701/1-1F102040921.png"></div>
+</body>
+<script type="text/javascript">
+	var height = document.documentElement.clientHeight;
+	$('.imghei').height(height)
+	$(document).keyup(function(event){ 
+
+　　　　if (event.keyCode === 32){ 
+
+　　　　　　goBack();
+
+　　　　} 
+
+　　}); 
+	function goBack(){
+		window.location.href='../gut.html'
+	}
+</script>
+</html>
