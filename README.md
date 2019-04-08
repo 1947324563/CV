@@ -10,5 +10,6 @@ http://cv.qiaobutang.com/r/5c8105dee4b0d92cbc65dce7
 #
 吉他谱阅览
 https://1947324563.github.io/CV/gut.html
-#百分比加载
+#
+canvas学习
 https://1947324563.github.io/CV/paint/canvas.html
