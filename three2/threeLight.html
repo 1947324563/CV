@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="three.js"></script>
+    <style>
+        div#canvas{
+            border: none;
+            background: #EEEEEE;
+            width: 100%;
+            height: 600px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let renderer;
+        function initThree() {
+            width = document.getElementById('canvas').clientWidth;
+            height = document.getElementById('canvas').clientHeight;
+            renderer = new THREE.WebGLRenderer({
+                antialias :true
+            });
+            renderer.setSize(width,height);
+            document.getElementById('canvas').appendChild(renderer.domElement);
+            renderer.setClearColor(0xFFFFFF,1.0);
+        }
+
+        let camera;
+        function initCamera(){
+            camera = new THREE.PerspectiveCamera(45, width / height,1,10000);
+            camera.position.x = 600;
+            camera.position.y = 0;
+            camera.position.z = 600;
+            camera.up.x = 0;
+            camera.up.y = 1;
+            camera.up.z = 0;
+            camera.lookAt(0,0,0);
+        }
+
+        let scene;
+        function initScene() {
+            scene = new THREE.Scene();
+        }
+
+        let light;
+        function initLight() {
+            // 环境光设置
+            light = new THREE.AmbientLight(0xFF0000);
+            light.position.set(100,100,200);
+            scene.add(light)
+        }
+        let cube;
+        function initObject() {
+            let geometry = new THREE.CubeGeometry(200,100,50,4,4);
+            let material = new THREE.MeshLambertMaterial({color:0x880000});
+            let mesh = new THREE.Mesh(geometry,material);
+            mesh.position = new THREE.Vector3(0,0,0);
+            scene.add(mesh);
+        }
+
+        function threeStart() {
+            initThree();
+            initCamera();
+            initScene();
+            initLight();
+            initObject();
+            renderer.clear();
+            renderer.render(scene, camera);
+        }
+    </script>
+</head>
+<body onload="threeStart()">
+<div id="canvas"></div>
+</body>
+</html>
